@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { setTodoDone, deleteTodo, archiveTodo, addTodo, changeFilter, fetchTodos } from '../utils/todoActions';
+import { setTodoDone, deleteTodo, archiveTodo, addTodo, changeFilter, searchFilter, fetchTodos } from '../utils/todoActions';
 import { getVisibleTodos } from '../utils/todoSelectors';
 import TodoList from './TodoList';
 
@@ -24,6 +24,7 @@ export class TodoListContainer extends Component {
     archiveTodo: PropTypes.func.isRequired,
     addTodo: PropTypes.func.isRequired,
     changeFilter: PropTypes.func.isRequired,
+    searchFilter: PropTypes.func.isRequired,
     fetchTodos: PropTypes.func.isRequired
   };
 
@@ -37,9 +38,8 @@ export class TodoListContainer extends Component {
 
 }
 
-
 const mapStateToProps = state => ({
-  todos: getVisibleTodos(state)
+  todos: getVisibleTodos(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -48,6 +48,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   archiveTodo,
   addTodo,
   changeFilter,
+  searchFilter,
   fetchTodos,
 }, dispatch)
 

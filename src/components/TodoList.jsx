@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import * as constants from '../utils/constants';
 import Todo from './Todo';
 import AddTodo from './AddTodo';
-import FilterSelect from './FilterSelect';
+import {FilterSearchComponent} from './FilterSearchComponent';
 
 // styles
 import '../styles/App.css';
 
 
 
-const TodoList = ({ todos, setTodoDone, deleteTodo, addTodo, filter }) => (
+const TodoList = ({ todos, setTodoDone, deleteTodo, archiveTodo, searchFilter,  addTodo, filter}) => (
   <div>
     <AddTodo addTodo={addTodo} />
     <ul className="todo-list">
         {todos
           .filter(todo => filter === constants.FILTER_UNDONE ? !todo.done : todo.done)
-          .map((todo) => <Todo key={`TODO#ID_${todo.id}`} todo={todo} setDone={setTodoDone} deleteTodo={deleteTodo} />)}
+          .map((todo) => <Todo key={`TODO#ID_${todo.id}`} todo={todo} setDone={setTodoDone} deleteTodo={deleteTodo} archiveTodo={archiveTodo} />)}
     </ul>
-    <FilterSelect changeFilter={filter} />
+    <FilterSearchComponent searchFilter={searchFilter} todos={todos}/>
   </div>
 );
 
@@ -34,7 +34,7 @@ TodoList.propTypes = {
   deleteTodo: PropTypes.func.isRequired,
   archiveTodo: PropTypes.func.isRequired,
   addTodo: PropTypes.func.isRequired,
-  changeFilter: PropTypes.func.isRequired
+  searchFilter: PropTypes.func.isRequired
 };
 
 export default TodoList;

@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { FILTER_ALL, FILTER_DONE, FILTER_UNDONE } from '../utils/constants';
 
-export const getVisibilityFilter = (state) => state.todoReducer.filter;
+export const getVisibilityFilter = (state) => state.todoReducer.filterChange;
 export const getTodos = (state) => state.todoReducer.todos;
 
 export const getVisibleTodos = createSelector(

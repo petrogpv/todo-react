@@ -99,6 +99,8 @@ export const addTodo = (task: String) => dispatch => {
     body: JSON.stringify({
       task,
       done: false,
+      deleted: false,
+      archived: false,
     })
   })
     .then((response) => response.json())
@@ -133,6 +135,13 @@ export const fetchTodos = () => dispatch => {
 export const changeFilter = (visibilityFilter) => ({
   type: types.CHANGE_FILTER,
   payload: {
-    filter: visibilityFilter
+    filterChange: visibilityFilter
+  }
+});
+
+export const searchFilter = (todos) => ({
+  type: types.SEARCH_FILTER,
+  payload: {
+    filteredTodos: todos
   }
 });

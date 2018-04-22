@@ -4,7 +4,8 @@ import * as types from '../utils/constants';
 
 const TodoState = new Record({
   todos: [],
-  filter: types.FILTER_UNDONE
+  filterChange: types.FILTER_ALL,
+  filterSearch: ''
 });
 
 export default TodoState;

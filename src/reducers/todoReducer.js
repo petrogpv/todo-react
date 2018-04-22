@@ -4,7 +4,7 @@ import * as types from '../utils/constants';
 const initialState = new InitialState();
 
 const todoReducer = (state = initialState, action) => {
-  if (!(state instanceof InitialState)) state = initialState.mergeDeep(state);
+  // if (!(state instanceof InitialState)) state = initialState.mergeDeep(state);
 
   switch(action.type) {
     case types.SET_TODO_DONE_SUCCESS:
@@ -21,7 +21,11 @@ const todoReducer = (state = initialState, action) => {
       return state.set('todos', [...action.payload.todos]);
 
     case types.CHANGE_FILTER:
-      return state.set('filter', action.payload.filter);
+      return state.set('filterChange', action.payload.filterChange);
+
+    case types.SEARCH_FILTER:
+      alert("Ok");
+      return state.set('todos',  action.payload.filteredTodos);
 
     default:
       return state;

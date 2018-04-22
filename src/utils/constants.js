@@ -15,6 +15,7 @@ export const FETCH_TODOS_ERROR = 'FETCH_TODOS_ERROR';
 export const FETCH_TODOS_SUCCESS = 'FETCH_TODOS_SUCCESS';
 
 export const CHANGE_FILTER = 'CHANGE_FILTER';
+export const SEARCH_FILTER = 'SEARCH_FILTER';
 
 export const FILTER_ALL = 'ALL';
 export const FILTER_DONE = 'DONE';

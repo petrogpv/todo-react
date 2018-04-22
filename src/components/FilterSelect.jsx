@@ -13,8 +13,6 @@ const FilterSelect = ({ changeFilter }) => (
       <option value={FILTER_DONE}>Show finished only</option>
       <option value={FILTER_UNDONE}>Show unfinished only</option>
     </select>
-
-      <input type="text" onChange={(e) => handleChange(e, changeFilter)}/>
   </div>
 );
 

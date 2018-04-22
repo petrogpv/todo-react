@@ -37,7 +37,7 @@ Todo.propTypes = {
   }).isRequired,
   setDone: PropTypes.func.isRequired,
   deleteTodo: PropTypes.func.isRequired,
-    archiveTodo: PropTypes.func.isRequired,
+  archiveTodo: PropTypes.func.isRequired,
 };
 
 export default Todo;
