@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import * as constants from '../utils/constants';
 import Todo from './Todo';
 import AddTodo from './AddTodo';
 import FilterSelect from './FilterSelect';
@@ -10,15 +10,15 @@ import '../styles/App.css';
 
 
 
-const TodoList = ({ todos, setTodoDone, deleteTodo, addTodo, changeFilter }) => (
+const TodoList = ({ todos, setTodoDone, deleteTodo, addTodo, filter }) => (
   <div>
     <AddTodo addTodo={addTodo} />
     <ul className="todo-list">
-      {todos
-          // .filter(todo => !todo.done)
+        {todos
+          .filter(todo => filter === constants.FILTER_UNDONE ? !todo.done : todo.done)
           .map((todo) => <Todo key={`TODO#ID_${todo.id}`} todo={todo} setDone={setTodoDone} deleteTodo={deleteTodo} />)}
     </ul>
-    <FilterSelect changeFilter={changeFilter} />
+    <FilterSelect changeFilter={filter} />
   </div>
 );
 

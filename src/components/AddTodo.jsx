@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
 class AddTodo extends Component {
 
   static propTypes = {
     addTodo: PropTypes.func.isRequired
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -40,16 +39,9 @@ class AddTodo extends Component {
 
   render() {
     return (
-      <div className="form-group row">
-        <input 
-          className="form-control dark-input"
-          type="text"
-          onChange={this.changeTaskText}
-          onKeyPress={this.handleKeyPress}
-          value={this.state.task}
-          placeholder="Task text"
-        />
-        {this.state.task ? <small className="form-text">Press enter to submit todo</small> : null}
+      <div className="form-input">
+        <input type="text" onChange={this.changeTaskText} onKeyPress={this.handleKeyPress} value={this.state.task} placeholder="Task text"/>
+        {this.state.task ? <small>Press enter to submit todo</small> : null}
       </div>
     );
   }

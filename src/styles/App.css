@@ -1,66 +1,69 @@
 .App {
-  text-align: center;
+    text-align: center;
+    background: radial-gradient(farthest-corner at 0px 0px, #0d4d62, #40b3ff, #2d6780);
+    color: #003f62;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 100px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    height: 200px;
+    padding: 40px;
 }
 
 .todo-list {
-  margin: 30px 0;
-  list-style-type: none;
-
-  border: 1px dashed;
-  padding: 30px;
+    margin: 30px 0;
+    list-style-type: square;
+    padding: 20px;
+    border-color: darkblue;
+    border: 1px dashed;
 }
 
 .todo-holder {
-  display: flex;
-  flex-direction: row;
-  margin: 10px 0;
-  border: 1px dashed;
-  padding: 15px; }
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    border-color: darkblue;
+    border: 1px dashed;
+}
+
 .todo-holder.done {
-  background-color: #3a3a3a; }
-.todo-holder.done .text {
-  text-decoration: line-through; }
+    background: radial-gradient(farthest-corner at 0px 0px, #003f62, #2d6780, #0d4d62);
+    text-decoration: line-through;
+    color: #5cf0ff;
+}
+
 .todo-holder .text {
-  flex: 7;
-  text-align: left;
-  margin: 0;
-  /* Maybe fix this differently - CENTERING text verticaly*/
-  display: flex;
-  align-items: center; }
+    flex: 7;
+    text-align: left;
+    margin: 0;
+    /* Maybe fix this differently - CENTERING text verticaly*/
+    display: flex;
+    align-items: center;
+}
+
 .todo-holder .buttons {
-  flex: 3; }
+    flex: 3;
+}
+
 .todo-holder .buttons .delete-button {
-  border: none;
-  padding: 0;
-  cursor: pointer; }
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
 .todo-holder .buttons .done-button {
-  border: none;
-  padding: 0;
-  cursor: pointer; }
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
 .todo-holder .buttons .control-image {
-  width: 24px; }
+    width: 24px;
+}
