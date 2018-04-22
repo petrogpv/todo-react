@@ -1,0 +1,35 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "task": "New tsak",
+      "done": false,
+      "deleted": false,
+      "archived": false
+    },
+    {
+      "id": 2,
+      "task": "Done task",
+      "done": true,
+      "deleted": false,
+      "archived": false
+    },
+    {
+      "id": 4,
+      "task": "archived task",
+      "done": false,
+      "deleted": false,
+      "archived": true
+    },
+    {
+      "task": "sdfdaf",
+      "done": true,
+      "id": 5
+    },
+    {
+      "task": "sdgfsdeagdsfsdagfdsafg",
+      "done": true,
+      "id": 6
+    }
+  ]
+}
