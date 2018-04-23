@@ -39,9 +39,8 @@ class AddTodo extends Component {
 
   render() {
     return (
-      <div className="form-input">
-        <input type="text" onChange={this.changeTaskText} onKeyPress={this.handleKeyPress} value={this.state.task} placeholder="Task text"/>
-        {this.state.task ? <small>Press enter to submit todo</small> : null}
+      <div className="form-input p-3">
+        <input type="text" className="form-control" onChange={this.changeTaskText} onKeyPress={this.handleKeyPress} value={this.state.task} placeholder="Enter task and press 'enter' to submit"/>
       </div>
     );
   }

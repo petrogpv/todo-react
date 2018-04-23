@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import {Todo, Done} from './App';
+import {Todo, Done, Archive} from './App';
 import NotFound from './NotFound';
 
 import '../styles/App.css';
@@ -13,6 +13,7 @@ const Root = () => (
     <Switch>
       <Route exact path="/" component={Todo} />
       <Route exact path="/done" component={Done} />
+      <Route exact path="/archived" component={Archive} />
       <Route path="*" component={NotFound} />
     </Switch>
   </Router>

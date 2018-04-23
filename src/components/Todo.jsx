@@ -1,43 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Button, ListGroupItem} from 'react-bootstrap';
 
-// styles
-import '../styles/App.css';
+const Todo = ({todo, setDone, deleteTodo, archiveTodo}) => (
+    <ListGroupItem className="list-group-item list-group-item-action d-flex w-90 h=90 justify-content-between">
+        <h4 className="mb-1">{todo.task}</h4>
+        <a>
+            {!todo.archived ?
+                <Button type="button" className="btn btn-success" onClick={(e) => {
+                e.preventDefault();
+                setDone(todo, !todo.done)
+            }}>{todo.done ? 'Mark Undone' : 'Mark Done'}</Button> : ''}
 
-import deleteImg from '../styles/images/delete.png';
-import doneImg from '../styles/images/done.png';
-import reactivateImg from '../styles/images/reactivate.png';
+            <Button type="button" className="btn btn btn-secondary" onClick={(e) => {
+                e.preventDefault();
+                archiveTodo(todo.id)
+            }}> {!todo.archived ? 'Archive' : 'UnArchive'}</Button>
 
-
-const Todo = ({ todo, setDone, deleteTodo }) => (
-  <li className={'todo-holder ' + (todo.done ? 'done' : '')}>
-    <p className="text">{todo.task}</p>
-    <div className="buttons">
-      <a className="done-button" onClick={(e) => { e.preventDefault(); setDone(todo, !todo.done) }}>
-        {
-          todo.done ? 
-            <img src={reactivateImg} className="control-image" alt="Reactivate" /> :
-            <img src={doneImg} className="control-image" alt="Set Done" />
-        }
-      </a>&nbsp;
-      <a className="delete-button" onClick={(e) => { e.preventDefault(); deleteTodo(todo.id) }}>
-        <img src={deleteImg} className="control-image" alt="Delete" />
-      </a>
-    </div>
-  </li>
+            {!todo.archived ?
+                <Button type="button" className="btn btn-danger" onClick={(e) => {
+                    e.preventDefault();
+                    deleteTodo(todo.id)
+                }}>Delete</Button> : ''}
+        </a>
+    </ListGroupItem>
 );
 
 Todo.propTypes = {
-  todo: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    task: PropTypes.string.isRequired,
-    done: PropTypes.bool.isRequired,
-      deleted: PropTypes.bool.isRequired,
-      archived: PropTypes.bool.isRequired
-  }).isRequired,
-  setDone: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired,
-  archiveTodo: PropTypes.func.isRequired,
+    todo: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        task: PropTypes.string.isRequired,
+        done: PropTypes.bool.isRequired,
+        deleted: PropTypes.bool.isRequired,
+        archived: PropTypes.bool.isRequired
+    }).isRequired,
+    setDone: PropTypes.func.isRequired,
+    deleteTodo: PropTypes.func.isRequired,
+    archiveTodo: PropTypes.func.isRequired,
 };
 
 export default Todo;
