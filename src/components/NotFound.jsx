@@ -1,8 +1,6 @@
 import React from 'react';
 import logo from '../styles/logo.svg';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
-import '../styles/App.css';
-
 
 const NotFound = () => (
         <div className="App">

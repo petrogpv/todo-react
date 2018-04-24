@@ -3,11 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import {Todo, Done, Archive} from './App';
 import NotFound from './NotFound';
 
-import '../styles/App.css';
-
-
-// here would go some application default layout, if it exist
-// in our case just simple router
 const Root = () => (
   <Router>
     <Switch>

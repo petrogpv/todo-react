@@ -6,10 +6,6 @@ import AddTodo from './AddTodo';
 import FilterSearch from './FilterSearch';
 import {ListGroup} from 'react-bootstrap';
 
-// styles
-import '../styles/App.css';
-
-
 const TodoList = ({todos, setTodoDone, deleteTodo, archiveTodo, searchFilter, addTodo, filter}) => (
     <div className="d-flex flex-column">
         {filter === constants.FILTER_UNDONE ? <AddTodo addTodo={addTodo}/> : ''}
