@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-
+import {ListGroup} from 'react-bootstrap';
 import {setTodoDone, deleteTodo, archiveTodo, addTodo, editTodo, searchFilter, fetchTodos} from '../utils/todoActions';
-import TodoList from './TodoList';
+import Todo from './Todo';
+import AddTodo from './AddTodo';
+import FilterSearch from './FilterSearch';
+import * as constants from "../utils/constants";
 
 
-export class TodoListContainer extends Component {
+export class TodoList extends Component {
 
     static propTypes = {
         filter: PropTypes.string.isRequired,
@@ -33,7 +36,23 @@ export class TodoListContainer extends Component {
     }
 
     render() {
-        return <TodoList {...this.props} />
+        return (
+            <div className="d-flex flex-column">
+                {this.props.filter === constants.FILTER_UNDONE ? <AddTodo addTodo={this.props.addTodo}/> : ''}
+                <ListGroup className="list-group p-3">
+                    {this.props.todos
+                        .filter(todo =>
+                            this.props.filter === constants.FILTER_ARCHIVED ?
+                                todo.archived :
+                                this.props.filter === constants.FILTER_DONE ?
+                                    todo.done && !todo.archived :
+                                    !todo.done && !todo.archived)
+                        .map((todo) => <Todo key={`TODO#ID_${todo.id}`} todo={todo} setDone={this.props.setTodoDone}
+                                              deleteTodo={this.props.deleteTodo} archiveTodo={this.props.archiveTodo}/>)}
+                </ListGroup>
+                <FilterSearch searchFilter={searchFilter}/>
+            </div>
+        )
     }
 }
 
@@ -52,4 +71,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoListContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

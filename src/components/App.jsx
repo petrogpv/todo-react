@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../styles/logo.svg';
-import TodoList from './TodoListContainer';
-import * as filter from '../utils/constants';
+import TodoList from './TodoList';
+import * as constant from '../utils/constants';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 import '../styles/App.css';
