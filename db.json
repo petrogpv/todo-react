@@ -2,27 +2,27 @@
   "todos": [
     {
       "id": 2,
-      "task": "Done task",
+      "task": "Done archived",
       "done": true,
       "deleted": false,
       "archived": true
     },
     {
-      "task": "gsdfagsedr",
+      "task": "archived",
       "done": false,
       "deleted": false,
       "archived": true,
       "id": 5
     },
     {
-      "task": "tre",
+      "task": "archived2",
       "done": false,
       "deleted": false,
       "archived": true,
       "id": 6
     },
     {
-      "task": "wer",
+      "task": "!done !archived",
       "done": false,
       "deleted": false,
       "archived": false,
@@ -36,21 +36,21 @@
       "id": 8
     },
     {
-      "task": "gfhdjdfg",
+      "task": "done",
       "done": true,
       "deleted": false,
       "archived": false,
       "id": 9
     },
     {
-      "task": "aaaa",
+      "task": "!!!",
       "done": false,
       "deleted": false,
       "archived": false,
       "id": 10
     },
     {
-      "task": "aa",
+      "task": "!!!",
       "done": false,
       "deleted": false,
       "archived": false,

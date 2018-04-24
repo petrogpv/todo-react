@@ -13,12 +13,10 @@ const Todo = ({todo, setDone, deleteTodo, archiveTodo}) => (
                 }}>{todo.done ? 'Mark Undone' : 'Mark Done'}</Button> : ''
             }
 
-            {!todo.done ?
-                <Button type="button" className="btn btn btn-secondary" onClick={(e) => {
-                    e.preventDefault();
-                    archiveTodo(todo, !todo.archived)
-                }}> {!todo.archived ? 'Archive' : 'UnArchive'}</Button> : ''
-            }
+            <Button type="button" className="btn btn btn-secondary" onClick={(e) => {
+                e.preventDefault();
+                archiveTodo(todo, !todo.archived)
+            }}> {!todo.archived ? 'Archive' : 'UnArchive'}</Button>
 
             {!todo.archived ?
                 <Button type="button" className="btn btn-danger" onClick={(e) => {
