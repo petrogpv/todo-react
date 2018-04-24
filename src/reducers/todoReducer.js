@@ -18,7 +18,7 @@ const todoReducer = (state = initialState, action) => {
     case types.ADD_TODO_SUCCESS:
       return state.set('todos', [...state.todos, action.payload.todo]);
 
-      case types.EDIT_TODO_SUCCESS:
+    case types.EDIT_TODO_SUCCESS:
       return state.set('todos', state.todos.map((todo) => todo.id === action.payload.id ? { ...todo, task: action.payload.task } : todo));
 
     case types.FETCH_TODOS_SUCCESS:
