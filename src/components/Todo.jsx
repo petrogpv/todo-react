@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Button, ListGroupItem} from 'react-bootstrap';
 
-const Todo = ({todo, setDone, deleteTodo, archiveTodo}) => (
+const Todo = ({todo, setDone, deleteTodo, archiveTodo, editTodo}) => (
     <ListGroupItem className="list-group-item list-group-item-action d-flex w-90 h=90 justify-content-between">
         <h4 className="mb-1">{todo.task}</h4>
         <a>
@@ -23,6 +23,12 @@ const Todo = ({todo, setDone, deleteTodo, archiveTodo}) => (
                     e.preventDefault();
                     deleteTodo(todo.id)
                 }}>Delete</Button> : ''
+            }
+            {!todo.archived ?
+                <Button type="button" className="btn btn-info" onClick={(e) => {
+                    e.preventDefault();
+                    editTodo(todo.id)
+                }}>Edit</Button> : ''
             }
         </a>
     </ListGroupItem>
