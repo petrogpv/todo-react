@@ -14,7 +14,7 @@ const Todo = ({todo, setDone, deleteTodo, archiveTodo}) => (
 
             <Button type="button" className="btn btn btn-secondary" onClick={(e) => {
                 e.preventDefault();
-                archiveTodo(todo.id)
+                archiveTodo(todo, !todo.archived)
             }}> {!todo.archived ? 'Archive' : 'UnArchive'}</Button>
 
             {!todo.archived ?

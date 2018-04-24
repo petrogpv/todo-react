@@ -34,6 +34,37 @@ export const setTodoDone = (todo: Object, done: Boolean) => dispatch => {
     .catch((error) => dispatch(setTodoDoneError(error)));
 }
 
+export const setTodoArchiveStart = () => ({
+  type: types.SET_TODO_ARCHIVED_START
+})
+
+export const setTodoArchiveError = (error: Error) => ({
+  type: types.SET_TODO_ARCHIVED_ERROR,
+  error
+});
+
+export const setTodoArchiveSuccess = (id: Number, done: Boolean) => ({
+  type: types.SET_TODO_ARCHIVED_SUCCESS,
+  payload: {
+    id,
+    done
+  }
+})
+
+export const archiveTodo = (todo: Object, archived: Boolean) => dispatch => {
+  dispatch(setTodoArchiveStart());
+
+  return fetch(`${API_URL}/todos/${todo.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ ...todo, archived })
+  })
+    .then((response) => dispatch(setTodoArchiveSuccess(todo.id, archived)))
+    .catch((error) => dispatch(setTodoArchiveError(error)));
+}
+
 export const deleteTodoStart = () => ({
   type: types.DELETE_TODO_START,
 });
@@ -51,17 +82,6 @@ export const deleteTodoSuccess = (id: Number) => ({
 });
 
 export const deleteTodo = (id: Number) => dispatch => {
-  dispatch(deleteTodoStart());
-
-  return fetch(`${API_URL}/todos/${id}`, {
-    method: 'DELETE',
-  })
-    .then((response) => dispatch(deleteTodoSuccess(id)))
-    .catch((error) => dispatch(deleteTodoError(error)));
-}
-
-// TODO : change this shit
-export const archiveTodo = (id: Number) => dispatch => {
   dispatch(deleteTodoStart());
 
   return fetch(`${API_URL}/todos/${id}`, {
@@ -139,9 +159,9 @@ export const changeFilter = (visibilityFilter) => ({
   }
 });
 
-export const searchFilter = (todos) => ({
+export const searchFilter = (searchStr) => ({
   type: types.SEARCH_FILTER,
   payload: {
-    filteredTodos: todos
+    searchFilter: searchStr
   }
 });

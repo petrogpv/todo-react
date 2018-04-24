@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as constants from '../utils/constants';
 import Todo from './Todo';
 import AddTodo from './AddTodo';
-import {FilterSearchComponent} from './FilterSearchComponent';
+import FilterSearch from './FilterSearch';
 import {ListGroup} from 'react-bootstrap';
 
 // styles
@@ -19,7 +19,7 @@ const TodoList = ({todos, setTodoDone, deleteTodo, archiveTodo, searchFilter, ad
                 .map((todo) => <Todo key={`TODO#ID_${todo.id}`} todo={todo} setDone={setTodoDone}
                                      deleteTodo={deleteTodo} archiveTodo={archiveTodo}/>)}
         </ListGroup>
-        <FilterSearchComponent searchFilter={searchFilter} todos={todos}/>
+        <FilterSearch searchFilter={searchFilter}/>
     </div>
 );
 

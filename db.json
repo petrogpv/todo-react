@@ -1,23 +1,9 @@
 {
   "todos": [
     {
-      "id": 1,
-      "task": "New tsak",
-      "done": false,
-      "deleted": false,
-      "archived": false
-    },
-    {
       "id": 2,
       "task": "Done task",
       "done": true,
-      "deleted": false,
-      "archived": false
-    },
-    {
-      "id": 4,
-      "task": "archived task",
-      "done": false,
       "deleted": false,
       "archived": true
     },
@@ -25,14 +11,14 @@
       "task": "gsdfagsedr",
       "done": false,
       "deleted": false,
-      "archived": false,
+      "archived": true,
       "id": 5
     },
     {
       "task": "tre",
       "done": false,
       "deleted": false,
-      "archived": false,
+      "archived": true,
       "id": 6
     },
     {
@@ -43,15 +29,15 @@
       "id": 7
     },
     {
-      "task": "sss",
+      "task": "dsfg",
       "done": false,
       "deleted": false,
       "archived": false,
       "id": 8
     },
     {
-      "task": "sgdfsd",
-      "done": true,
+      "task": "gfhdjdfg",
+      "done": false,
       "deleted": false,
       "archived": false,
       "id": 9
