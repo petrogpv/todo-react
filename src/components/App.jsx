@@ -63,7 +63,7 @@ class TodoComponent extends Component {
     render() {
         return (
             <div>
-                <TodoList filter={filter.FILTER_UNDONE}/>
+                <TodoList filter={constant.FILTER_UNDONE}/>
             </div>
         );
     }
@@ -73,7 +73,7 @@ class DoneComponent extends Component {
     render() {
         return (
             <div>
-                <TodoList filter={filter.FILTER_DONE}/>
+                <TodoList filter={constant.FILTER_DONE}/>
             </div>
         );
     }
@@ -83,7 +83,7 @@ class ArchiveComponent extends Component {
     render() {
         return (
             <div>
-                <TodoList filter={filter.FILTER_ARCHIVED}/>
+                <TodoList filter={constant.FILTER_ARCHIVED}/>
             </div>
         );
     }

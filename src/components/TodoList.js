@@ -11,6 +11,7 @@ import TodoList from './TodoList';
 export class TodoListContainer extends Component {
 
     static propTypes = {
+        filter: PropTypes.string.isRequired,
         todos: PropTypes.arrayOf(PropTypes.shape({
             id: PropTypes.number.isRequired,
             task: PropTypes.string.isRequired,
@@ -37,7 +38,7 @@ export class TodoListContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-    todos: state.todoReducer.todos,
+    todos: state.todoReducer.todos
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
