@@ -8,20 +8,24 @@ const Todo = ({todo, setDone, deleteTodo, archiveTodo}) => (
         <a>
             {!todo.archived ?
                 <Button type="button" className="btn btn-success" onClick={(e) => {
-                e.preventDefault();
-                setDone(todo, !todo.done)
-            }}>{todo.done ? 'Mark Undone' : 'Mark Done'}</Button> : ''}
+                    e.preventDefault();
+                    setDone(todo, !todo.done)
+                }}>{todo.done ? 'Mark Undone' : 'Mark Done'}</Button> : ''
+            }
 
-            <Button type="button" className="btn btn btn-secondary" onClick={(e) => {
-                e.preventDefault();
-                archiveTodo(todo, !todo.archived)
-            }}> {!todo.archived ? 'Archive' : 'UnArchive'}</Button>
+            {!todo.done ?
+                <Button type="button" className="btn btn btn-secondary" onClick={(e) => {
+                    e.preventDefault();
+                    archiveTodo(todo, !todo.archived)
+                }}> {!todo.archived ? 'Archive' : 'UnArchive'}</Button> : ''
+            }
 
             {!todo.archived ?
                 <Button type="button" className="btn btn-danger" onClick={(e) => {
                     e.preventDefault();
                     deleteTodo(todo.id)
-                }}>Delete</Button> : ''}
+                }}>Delete</Button> : ''
+            }
         </a>
     </ListGroupItem>
 );
