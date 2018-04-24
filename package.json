@@ -16,7 +16,8 @@
     "react-scripts": "^1.1.4",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "react-modal-bootstrap": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
