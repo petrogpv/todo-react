@@ -9,9 +9,9 @@
     },
     {
       "task": "archived",
-      "done": false,
+      "done": true,
       "deleted": false,
-      "archived": true,
+      "archived": false,
       "id": 5
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "task": "dsfg",
-      "done": false,
+      "done": true,
       "deleted": false,
       "archived": false,
       "id": 8

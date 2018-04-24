@@ -15,6 +15,7 @@ export class Todo extends Component {
         setDone: PropTypes.func.isRequired,
         deleteTodo: PropTypes.func.isRequired,
         archiveTodo: PropTypes.func.isRequired,
+        editTodo: PropTypes.func.isRequired,
     };
 
     constructor(props) {
@@ -24,41 +25,40 @@ export class Todo extends Component {
             todo: props.todo,
             setDone: props.setDone,
             deleteTodo: props.deleteTodo,
-            archiveTodo: props.archiveTodo
+            archiveTodo: props.archiveTodo,
+            editTodo: props.editTodo,
         };
     }
 
     render() {
         return (
-            <ListGroupItem className="list-group-item list-group-item-action d-flex w-90 h=90 justify-content-between">
-                <h4 className="mb-1">{this.state.todo.task}</h4>
-                <a>
-                    {!this.state.todo.archived ?
-                        <Button type="button" className="btn btn-success" onClick={(e) => {
-                            e.preventDefault();
-                            this.state.setDone(this.state.todo, !this.state.todo.done)
-                        }}>{this.state.todo.done ? 'Mark Undone' : 'Mark Done'}</Button> : ''
-                    }
+                <ListGroupItem
+                    className="list-group-item list-group-item-action d-flex w-90 h=90 justify-content-between">
+                    <h4 className="mb-1">{this.state.todo.task}</h4>
+                    <a>
+                        {!this.state.todo.archived ?
+                            <Button type="button" className="btn btn-success" onClick={(e) => {
+                                e.preventDefault();
+                                this.state.setDone(this.state.todo, !this.state.todo.done)
+                            }}>{this.state.todo.done ? 'Mark Undone' : 'Mark Done'}</Button> : ''
+                        }
 
-                    <Button type="button" className="btn btn btn-secondary" onClick={(e) => {
-                        e.preventDefault();
-                        this.state.archiveTodo(this.state.todo, !this.state.todo.archived)
-                    }}> {!this.state.todo.archived ? 'Archive' : 'UnArchive'}</Button>
+                        <Button type="button" className="btn btn btn-secondary" onClick={(e) => {
+                            e.preventDefault();
+                            this.state.archiveTodo(this.state.todo, !this.state.todo.archived)
+                        }}> {!this.state.todo.archived ? 'Archive' : 'UnArchive'}</Button>
 
-                    {!this.state.todo.archived ?
-                        <Button type="button" className="btn btn-danger" onClick={(e) => {
-                            e.preventDefault();
-                            this.state.deleteTodo(this.state.todo.id)
-                        }}>Delete</Button> : ''
-                    }
-                    {!this.state.todo.archived ?
-                        <Button type="button" className="btn btn-info" onClick={(e) => {
-                            e.preventDefault();
-                            this.state.editTodo(this.state.todo.id)
-                        }}>Edit</Button> : ''
-                    }
-                </a>
-            </ListGroupItem>
+                        {!this.state.todo.archived ?
+                            <Button type="button" className="btn btn-danger" onClick={(e) => {
+                                e.preventDefault();
+                                this.state.deleteTodo(this.state.todo.id)
+                            }}>Delete</Button> : ''
+                        }
+                        {!this.state.todo.archived ?
+                            <Button type="button" className="btn btn-info" onClick={this.state.editTodo(this.state.todo.id)}>Edit</Button> : ''
+                        }
+                    </a>
+                </ListGroupItem>
         )
     }
 }

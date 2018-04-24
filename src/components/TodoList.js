@@ -48,7 +48,7 @@ export class TodoList extends Component {
                                     todo.done && !todo.archived :
                                     !todo.done && !todo.archived)
                         .map((todo) => <Todo key={`TODO#ID_${todo.id}`} todo={todo} setDone={this.props.setTodoDone}
-                                              deleteTodo={this.props.deleteTodo} archiveTodo={this.props.archiveTodo}/>)}
+                                              deleteTodo={this.props.deleteTodo} archiveTodo={this.props.archiveTodo} editTodo={this.props.editTodo}/>)}
                 </ListGroup>
                 <FilterSearch searchFilter={searchFilter}/>
             </div>
