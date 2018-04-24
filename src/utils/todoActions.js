@@ -43,13 +43,13 @@ export const setTodoArchiveError = (error: Error) => ({
   error
 });
 
-export const setTodoArchiveSuccess = (id: Number, done: Boolean) => ({
+export const setTodoArchiveSuccess = (id: Number, archived: Boolean) => ({
   type: types.SET_TODO_ARCHIVED_SUCCESS,
   payload: {
     id,
-    done
+    archived
   }
-})
+});
 
 export const archiveTodo = (todo: Object, archived: Boolean) => dispatch => {
   dispatch(setTodoArchiveStart());

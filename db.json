@@ -5,7 +5,7 @@
       "task": "Done archived",
       "done": true,
       "deleted": false,
-      "archived": true
+      "archived": false
     },
     {
       "task": "archived",
@@ -25,7 +25,7 @@
       "task": "!done !archived",
       "done": false,
       "deleted": false,
-      "archived": false,
+      "archived": true,
       "id": 7
     },
     {
