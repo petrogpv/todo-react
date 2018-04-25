@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/Root';
-import registerServiceWorker from './utils/registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
@@ -17,7 +16,7 @@ function logger({ getState }) {
     console.log('state after dispatch', getState());
         return returnValue;
     }
-};
+}
 
 
 let store = createStore(
@@ -32,4 +31,3 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-registerServiceWorker();

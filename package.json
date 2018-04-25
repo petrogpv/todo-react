@@ -1,5 +1,5 @@
 {
-  "name": "untitled2",
+  "name": "todo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,14 +10,14 @@
     "react": "^15.6.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^15.6.1",
+    "react-modal-bootstrap": "^1.1.1",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-scripts": "^1.1.4",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1",
-    "react-modal-bootstrap": "latest"
+    "reselect": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

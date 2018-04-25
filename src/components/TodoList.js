@@ -10,7 +10,6 @@ import AddTodo from './AddTodo';
 import FilterSearch from './FilterSearch';
 import * as constants from "../utils/constants";
 
-
 export class TodoList extends Component {
 
     static propTypes = {
@@ -69,6 +68,5 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     searchFilter,
     fetchTodos,
 }, dispatch);
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
