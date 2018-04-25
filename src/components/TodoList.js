@@ -49,7 +49,7 @@ export class TodoList extends Component {
                         .map((todo) => <Todo key={`TODO#ID_${todo.id}`} todo={todo} setDone={this.props.setTodoDone}
                                               deleteTodo={this.props.deleteTodo} archiveTodo={this.props.archiveTodo} editTodo={this.props.editTodo}/>)}
                 </ListGroup>
-                <FilterSearch searchFilter={searchFilter}/>
+                <FilterSearch searchFilter={this.props.searchFilter}/>
             </div>
         )
     }

@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": 2,
-      "task": "dhrehg",
+      "task": "dhrehg111",
       "done": false,
       "deleted": false,
       "archived": false
@@ -58,7 +58,7 @@
     },
     {
       "task": "asdsad",
-      "done": false,
+      "done": true,
       "deleted": false,
       "archived": false,
       "id": 12
@@ -67,15 +67,8 @@
       "task": "jkl;kjh",
       "done": false,
       "deleted": false,
-      "archived": false,
+      "archived": true,
       "id": 13
-    },
-    {
-      "task": "jhop;",
-      "done": false,
-      "deleted": false,
-      "archived": false,
-      "id": 14
     },
     {
       "task": "AAAAddd",
